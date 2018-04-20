@@ -10,38 +10,40 @@ import org.testng.annotations.Test;
 
 import testBase.testBase;
 
-public class loginPageTest extends testBase{
+public class loginPageTest{
 
 	
 	
-	public loginPageTest() throws FileNotFoundException {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	@BeforeMethod
      
 	public static void setUp()
 	{
-		initialization();
-		try {
-			Thread.sleep(8000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+	testBase.initialization();
+	
+	
 	}
 	
 	@Test
 	
 	public static void loginkaro()
 	{
-		obj.findElement(By.id("app_ad_name")).sendKeys("admin");
-		obj.findElement(By.id("app_ad_pass")).sendKeys("admin");
+		
+		System.out.println(testBase.obj.getCurrentUrl());
 		
 		
 		
 	}
+	
+	@Test
+	
+	public static void title()
+	{
+		System.out.println(testBase.obj.getTitle());
+	}
+	
+	
 	
 	@AfterMethod
 	

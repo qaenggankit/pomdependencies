@@ -11,23 +11,27 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class testBase {
 
-	
 	public static WebDriver obj;
 	public static Properties prop;
 	
 	
-	public testBase() throws FileNotFoundException
-	{
+	static {
+		
+		
 		prop = new Properties();
-		
-		FileInputStream in = new FileInputStream("C:\\Users\\Windows10\\eclipse-workspace\\PageObjectModel\\src\\main\\java\\config\\config.properties");
-		
 		try {
+			FileInputStream in = new FileInputStream("C:\\Users\\Windows10\\eclipse-workspace\\PageObjectModel\\src\\main\\java\\config\\config.properties");
 			prop.load(in);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+	}
+	public testBase() throws FileNotFoundException
+	{		
+		
 	}
 	
 	
